@@ -23,12 +23,13 @@
         "source.organizeImports": true,
         "python.linting.pylintEnabled": false,
         "ruff.path": ["/site/venv/bin/ruff"],
+        "ruff.args": ["--config=${containerWorkspaceFolder}/ec2/pyproject.toml"],
         "python.formatting.blackPath": "/site/venv/bin/black",
         "python.formatting.blackArgs": [
-            "--config", "ec2/pyproject.toml"
+            "--config", "${containerWorkspaceFolder}/ec2/pyproject.toml"
         ],
         "python.sortImports.args": [
-            "--settings-path", "${workspaceFolder}/ec2/pyproject.toml"
+            "--settings-path", "${containerWorkspaceFolder}/ec2/pyproject.toml"
         ],
         "git.ignoreLimitWarning": true,
         "[python]": {

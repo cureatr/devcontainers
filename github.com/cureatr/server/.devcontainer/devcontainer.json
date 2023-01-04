@@ -35,6 +35,7 @@
         "source.organizeImports": true,
         "python.linting.pylintEnabled": false,
         "ruff.path": ["/site/venv/bin/ruff"],
+        "ruff.args": ["--config=${containerWorkspaceFolder}/pyproject.toml"],
         "git.ignoreLimitWarning": true,
         "[python]": {
             "editor.formatOnSave": true,
