@@ -1,0 +1,30 @@
+{
+    "name": "Datascience Prefect",
+    "image": "cureatr/datascience-prefect:latest",
+    "runArgs": ["--init"],
+    "remoteUser": "root",
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+    ],
+    "onCreateCommand": "apt-get update && apt-get install -y --no-install-suggests git",
+    "settings": {
+        "python.defaultInterpreterPath": "/site/venv/bin/python",
+        "python.pythonPath": "/site/venv/bin/python",
+        "python.languageServer": "Pylance",
+        "python.linting.lintOnSave": true,
+        "python.formatting.blackPath": "/site/venv/bin/black",
+        "python.formatting.provider": "black",
+        "source.organizeImports": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Path": "/site/venv/bin/flake8",
+        "git.ignoreLimitWarning": true,
+        "[python]": {
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+                "source.organizeImports": true
+            }
+        }
+    }
+}

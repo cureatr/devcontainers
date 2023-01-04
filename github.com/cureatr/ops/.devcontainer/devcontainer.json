@@ -1,0 +1,41 @@
+{
+    "name": "Cureatr Ops",
+    "image": "cureatr/cureatr-vm",
+    "init": true,
+    "remoteUser": "cureatr",
+    "overrideCommand": false,
+    "remoteEnv": {
+        "PATH": "/site/venv/bin:${containerEnv:PATH}",
+        "PYTHONPATH": "ec2/"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "eamodio.gitlens"
+    ],
+    "settings": {
+        "python.defaultInterpreterPath": "/site/venv/bin/python",
+        "python.pythonPath": "/site/venv/bin/python",
+        "python.languageServer": "Pylance",
+        "python.linting.lintOnSave": true,
+        "python.formatting.provider": "black",
+        "source.organizeImports": true,
+        "python.linting.pylintEnabled": false,
+        "ruff.path": ["/site/venv/bin/ruff"],
+        "python.formatting.blackPath": "/site/venv/bin/black",
+        "python.formatting.blackArgs": [
+            "--config", "ec2/pyproject.toml"
+        ],
+        "python.sortImports.args": [
+            "--settings-path", "${workspaceFolder}/ec2/pyproject.toml"
+        ],
+        "git.ignoreLimitWarning": true,
+        "[python]": {
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+                "source.organizeImports": true
+            }
+        }
+    }
+}

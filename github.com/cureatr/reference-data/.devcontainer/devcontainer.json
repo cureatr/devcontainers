@@ -1,0 +1,19 @@
+{
+    "name": "Cureatr Reference Data",
+    "image": "cureatr/cureatr-vm:latest",
+    "runArgs": ["--user", "root"],
+    "init": true,
+    "overrideCommand": false,
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "eamodio.gitlens"
+    ],
+    "settings": {
+        "python.pythonPath": "/site/venv/bin/python",
+        "python.languageServer": "Pylance",
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": ["--extend-ignore", "E501", "--max-line-length=1000"]
+    }
+}
