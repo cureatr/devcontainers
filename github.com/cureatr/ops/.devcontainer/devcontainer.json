@@ -24,6 +24,8 @@
         "python.linting.pylintEnabled": false,
         "ruff.path": ["/site/venv/bin/ruff"],
         "ruff.args": ["--config=${containerWorkspaceFolder}/ec2/pyproject.toml"],
+        "ruff.organizeImports": false,
+        "ruff.fixAll": false,
         "python.formatting.blackPath": "/site/venv/bin/black",
         "python.formatting.blackArgs": [
             "--config", "${containerWorkspaceFolder}/ec2/pyproject.toml"
