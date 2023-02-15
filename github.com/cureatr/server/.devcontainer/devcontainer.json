@@ -7,7 +7,6 @@
     "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "ms-python.isort",
         "ms-python.black-formatter",
         "charliermarsh.ruff",
         "eamodio.gitlens"
@@ -35,11 +34,10 @@
         "python.formatting.blackPath": "/site/venv/bin/black",
         "python.formatting.provider": "black",
         "source.organizeImports": true,
-        "python.sortImports.path": "/site/venv/bin/isort",
         "python.linting.pylintEnabled": false,
         "ruff.path": ["/site/venv/bin/ruff"],
         "ruff.args": ["--config=${containerWorkspaceFolder}/pyproject.toml"],
-        "ruff.organizeImports": false,
+        "ruff.organizeImports": true,
         "ruff.fixAll": false,
         "git.ignoreLimitWarning": true,
         "[python]": {
