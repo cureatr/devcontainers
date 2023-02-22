@@ -4,48 +4,51 @@
     "init": true,
     "remoteUser": "cureatr",
     "overrideCommand": false,
-    "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-python.black-formatter",
-        "charliermarsh.ruff",
-        "eamodio.gitlens"
-    ],
     "remoteEnv": {
         "PATH": "/site/venv/bin:${containerEnv:PATH}",
-        "PYTHONPATH": ".",
+        "PYTHONPATH": "${containerWorkspaceFolder}",
         "PYTEST_ADDOPTS": "--init-standalone",
         "AWS_ACCESS_KEY_ID": "XXX",
         "AWS_SECRET_ACCESS_KEY": "XXX"
     },
-    "settings": {
-        "python.defaultInterpreterPath": "/site/venv/bin/python",
-        "python.pythonPath": "/site/venv/bin/python",
-        "python.languageServer": "Pylance",
-        "python.testing.pytestEnabled": true,
-        "python.testing.autoTestDiscoverOnSaveEnabled": false,
-        "python.testing.pytestArgs": [
-            "--init-standalone",
-            "--strict-markers",
-            "--doctest-modules",
-            "-m", "not slow and not ios and not web and not android"
-        ],
-        "python.linting.lintOnSave": true,
-        "python.formatting.blackPath": "/site/venv/bin/black",
-        "python.formatting.provider": "black",
-        "source.organizeImports": true,
-        "python.linting.pylintEnabled": false,
-        "ruff.path": ["/site/venv/bin/ruff"],
-        "ruff.args": ["--config=${containerWorkspaceFolder}/pyproject.toml"],
-        "ruff.organizeImports": true,
-        "ruff.fixAll": false,
-        "git.ignoreLimitWarning": true,
-        "[python]": {
-            "editor.defaultFormatter": "ms-python.black-formatter",
-            "editor.formatOnSave": true,
-            "editor.codeActionsOnSave": [
-                "source.organizeImports"
-            ]
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "charliermarsh.ruff",
+                "eamodio.gitlens"
+            ],
+            "settings": {
+                "telemetry.telemetryLevel": "off",
+                "python.defaultInterpreterPath": "/site/venv/bin/python",
+                "python.languageServer": "Pylance",
+                "python.testing.pytestEnabled": true,
+                "python.testing.autoTestDiscoverOnSaveEnabled": false,
+                "python.testing.pytestArgs": [
+                    "--init-standalone",
+                    "--strict-markers",
+                    "--doctest-modules",
+                    "-m", "not slow and not ios and not web and not android"
+                ],
+                "python.linting.lintOnSave": true,
+                "black-formatter.importStrategy": "fromEnvironment",
+                "python.formatting.provider": "none",
+                "source.organizeImports": true,
+                "python.linting.pylintEnabled": false,
+                "ruff.interpreter": ["/site/venv/bin/python"],
+                "ruff.importStrategy": "fromEnvironment",
+                "ruff.organizeImports": true,
+                "ruff.fixAll": false,
+                "git.ignoreLimitWarning": true,
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": [
+                        "source.organizeImports"
+                    ]
+                }
+            }
         }
     }
 }
